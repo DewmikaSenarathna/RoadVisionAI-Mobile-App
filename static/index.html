@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#07131b" />
+  <title>RoadVisionAI Accident Shield</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="splash screen active" id="screen-splash">
+      <div class="mesh mesh-a"></div>
+      <div class="mesh mesh-b"></div>
+      <div class="splash-glow glow-a"></div>
+      <div class="splash-glow glow-b"></div>
+      <div class="brand-lockup" aria-hidden="true">
+        <div class="brand-mark">
+          <img src="/brand-logo" alt="RoadVisionAI logo" />
+        </div>
+        <img class="brand-wordmark" src="/brand-wordmark" alt="RoadVisionAI wordmark" />
+      </div>
+      <p class="eyebrow">RoadVisionAI · secure accident prediction</p>
+      <h1>See road risk before the road sees you.</h1>
+      <p class="subtitle">A polished mobile risk cockpit that blends live GPS, weather, time, and roadway context into a clear accident-risk view before every drive.</p>
+      <div class="splash-actions">
+        <button class="primary" id="enter-app">Open app</button>
+        <button class="secondary" id="skip-auto">Snapshot mode</button>
+      </div>
+      <div class="feature-strip">
+        <div><span>Live GPS</span><strong>Auto capture</strong></div>
+        <div><span>Weather</span><strong>Open-Meteo</strong></div>
+        <div><span>Roads</span><strong>OSM signals</strong></div>
+        <div><span>Security</span><strong>API guarded</strong></div>
+      </div>
+    </section>
+
+    <section class="screen home" id="screen-home">
+      <header class="hero-card">
+        <div>
+          <p class="eyebrow">RoadVisionAI · live risk console</p>
+          <h2>One tap to live accident intelligence</h2>
+          <p class="hero-copy">Choose automatic prediction for live GPS-based refreshes, or manual prediction for a custom route or incident scenario.</p>
+        </div>
+        <div class="hero-badge" id="risk-badge">Ready</div>
+      </header>
+
+      <section class="panel live-panel">
+        <div class="panel-head">
+          <h3>Current driving context</h3>
+          <span id="last-refresh">Waiting for GPS</span>
+        </div>
+        <div class="metric-grid">
+          <article><span>Location</span><strong id="location-text">Tap automatic mode</strong></article>
+          <article><span>Time</span><strong id="time-text">--</strong></article>
+          <article><span>Weather</span><strong id="weather-text">--</strong></article>
+          <article><span>Speed</span><strong id="speed-text">-- mph</strong></article>
+        </div>
+        <div class="context-tags" id="context-tags">
+          <span>Traffic signals</span>
+          <span>Weather sync</span>
+          <span>Risk refresh</span>
+          <span>Location aware</span>
+        </div>
+      </section>
+
+      <section class="mode-grid">
+        <button class="mode-card auto" id="auto-mode">
+          <span class="mode-label">Automatic prediction system</span>
+          <strong>Refresh every minute</strong>
+          <p>Uses GPS, weather, road context, and live time to re-score risk without manual input.</p>
+        </button>
+        <button class="mode-card manual" id="manual-mode">
+          <span class="mode-label">Single snapshot prediction</span>
+          <strong>Capture once</strong>
+          <p>Collects live GPS, weather, and road context one time at the moment you tap it.</p>
+        </button>
+      </section>
+
+      <section class="panel manual-panel hidden" id="manual-panel">
+        <div class="panel-head">
+          <h3>Snapshot mode</h3>
+          <span>One-time live collection</span>
+        </div>
+        <p class="hero-copy">RoadVisionAI will collect the current GPS location, time, weather, and road context once, then show a single prediction result.</p>
+      </section>
+    </section>
+
+    <section class="screen result" id="screen-result">
+      <div class="result-hero">
+        <p class="eyebrow">Prediction result</p>
+        <h2 id="risk-title">--</h2>
+        <div class="risk-pill" id="risk-pill">--</div>
+      </div>
+      <section class="panel result-panel">
+        <div class="risk-meter">
+          <span class="risk-meter-fill" id="risk-meter-fill"></span>
+        </div>
+        <div class="result-stats">
+          <article><span>Confidence</span><strong id="confidence-text">--%</strong></article>
+          <article><span>Mode</span><strong id="mode-text">--</strong></article>
+          <article><span>GPS</span><strong id="gps-text">--</strong></article>
+          <article><span>Status</span><strong id="status-text">Live scoring</strong></article>
+        </div>
+        <div>
+          <h3>Why this risk</h3>
+          <ul class="reason-list" id="reason-list"></ul>
+        </div>
+        <div>
+          <h3>Driving advice</h3>
+          <ul class="advice-list" id="advice-list"></ul>
+        </div>
+      </section>
+      <div class="result-actions">
+        <button class="secondary" id="back-home">Back</button>
+        <button class="primary" id="refresh-auto">Refresh live data</button>
+      </div>
+    </section>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>
