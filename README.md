@@ -1,39 +1,46 @@
-# RoadVisionAI Mobile App
+# RoadVisionAI Accident Shield
 
-This folder contains the Flutter client scaffold for RoadVisionAI. It is designed to talk to the existing FastAPI backend and present accident-risk scores in a polished mobile dashboard.
+RoadVisionAI is a mobile-first accident risk prediction app built with FastAPI, a trained risk model, and a polished browser UI. The repository has been reorganized for public release so the runtime code, artifacts, assets, and notebook work are separated cleanly.
 
-## What It Does
+## Repository Layout
 
-- Checks backend health and shows connection state
-- Sends automatic or snapshot prediction requests
-- Renders the returned risk level, confidence, reasons, and driving advice
-- Uses a secure setup where secrets remain on the backend, not inside the app
+- `app/` - backend package and API entrypoint
+- `artifacts/` - trained model, feature order, and preprocessing artifacts
+- `assets/` - brand images used by the web app
+- `notebooks/` - model training and experimentation notebook
+- `static/` - browser UI, styles, and client-side logic
+- `mobile_app/` - Flutter mobile client scaffold for Android and iOS
+- `main.py` - compatibility entrypoint for `uvicorn main:app`
+- `.gitignore` - excludes local environments and cache files from GitHub
+- `.env.example` - documented environment variables for safe local setup
 
-## Run It
+## Run Locally
+
+1. Install dependencies from `requirements.txt`.
+2. Copy `.env.example` to `.env` and set `ROADVISIONAI_API_KEY` if you want request authentication.
+3. Start the server with `uvicorn app.main:app --host 0.0.0.0 --port 8000`.
+4. Open `http://127.0.0.1:8000` in a browser on the host machine.
+
+## Flutter Mobile Client
+
+The mobile client lives in [mobile_app](mobile_app) and connects to the same backend API.
 
 1. Install Flutter.
-2. From this folder, run `flutter pub get`.
+2. Run `flutter pub get` inside `mobile_app/`.
 3. Start the backend server.
-4. Create a `.env` file from `.env.example` and fill in your OpenWeather API key.
+4. Launch the app with `flutter run --dart-define=ROADVISIONAI_API_BASE_URL=http://10.0.2.2:8000`.
 
-   `cp .env.example .env`
+For a physical device, replace `10.0.2.2` with your computer's LAN IP address.
 
-5. Launch the app normally, for example:
+## Publish Checklist
 
-   `flutter run`
-
-For a real device, use your system IP address (for example `192.168.1.5`) in the `.env` file instead of `10.0.2.2`.
-
-Make sure the backend server is actually running and bound to all interfaces. You can start it from the root folder with:
-
-```bat
-run_backend.bat
-```
-
-If the mobile phone still cannot connect, verify Windows Firewall allows incoming traffic on port `8000`.
+- Keep `.venv/`, `.env`, cache folders, and notebook checkpoints out of GitHub.
+- Do not commit secrets, API keys, or any machine-specific configuration.
+- If the model artifacts are too large for normal Git history, move them to Git LFS or release assets before publishing.
+- Keep the Flutter build output and `.dart_tool/` cache out of the repository.
 
 ## Notes
 
-- The app uses `geolocator` to request runtime location permission on Android.
-- The branded logo and splash screen are included in `mobile_app/assets/`.
-- The app intentionally does not store backend API keys in source.
+- Automatic mode uses live GPS, weather, and road context from the browser plus external APIs.
+- Manual mode lets you enter the exact feature values used by the model.
+- If the saved pickle artifacts cannot be loaded cleanly in the local environment, the app falls back to a safe heuristic scorer so the UI remains usable.
