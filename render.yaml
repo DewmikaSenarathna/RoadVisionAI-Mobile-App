@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: roadvisionai-backend
+    env: docker
+    region: oregon
+    plan: free
+    envVars:
+      - key: ROADVISIONAI_API_KEY
+        sync: false
+      - key: ROADVISIONAI_CORS_ORIGINS
+        value: "*"
+        sync: false
+      - key: ROADVISIONAI_WEATHER_API_BASE_URL
+        sync: false
+      - key: ROADVISIONAI_WEATHER_API_KEY
+        sync: false
