@@ -1,3 +1,16 @@
+<p align="center">
+  <img src="mobile_app/assets/Logo.png" width="180" alt="RoadVisionAI Logo">
+</p>
+
+<h1 align="center">RoadVision AI</h1>
+
+<p align="center">
+  <strong>Intelligent Road Accident Risk Prediction Platform</strong><br>
+</p>
+
+---
+<br>
+
 # 🚦 RoadVisionAI
 
 ### AI-Powered Road Accident Risk Prediction Platform
@@ -5,6 +18,7 @@
 RoadVisionAI is an intelligent road safety platform that leverages **Machine Learning, Weather Intelligence and Geospatial Road Analysis** to predict accident risk before a journey begins. By combining real-time environmental conditions with road infrastructure data, the system provides actionable risk assessments that help promote safer travel decisions.
 
 ---
+<br>
 
 ## 🌟 Overview
 
@@ -28,6 +42,7 @@ RoadVisionAI is suitable for:
 * Intelligent decision-support systems
 
 ---
+<br>
 
 # 🎯 Key Features
 
@@ -70,6 +85,7 @@ Optional API key authentication is available for protecting prediction endpoints
 If the trained model becomes unavailable, the system automatically switches to a heuristic-based prediction mode to maintain service availability.
 
 ---
+<br>
 
 # 🏗 System Architecture
 
@@ -93,6 +109,7 @@ The backend is developed using FastAPI and provides:
 * NumPy
 
 ---
+<br>
 
 ## Weather Intelligence Layer
 
@@ -116,6 +133,7 @@ Weather context can be obtained through:
 * Custom weather providers
 
 ---
+<br>
 
 ## Geospatial Analysis Layer
 
@@ -131,6 +149,7 @@ Planned geospatial features include:
 * Infrastructure complexity assessment
 
 ---
+<br>
 
 ## Frontend Layer
 
@@ -145,12 +164,14 @@ The browser-based interface provides:
 * Guidence for minimize risk
 
 ---
+<br>
 
 ## Mobile Layer
 
 A Flutter application scaffold is included for future Android and iOS deployment.
 
 ---
+<br>
 
 # 📂 Project Structure
 
@@ -171,6 +192,7 @@ RoadVisionAI/
 ```
 
 ---
+<br>
 
 # 🚀 Getting Started
 
@@ -186,6 +208,7 @@ Optional:
 * Docker
 
 ---
+<br>
 
 ## Installation
 
@@ -224,6 +247,7 @@ ROADVISIONAI_WEATHER_API_KEY=
 ```
 
 ---
+<br>
 
 ## Run Locally
 
@@ -240,6 +264,7 @@ https://accident-predictor-1.onrender.com/
 ```
 
 ---
+<br>
 
 Returns:
 
@@ -248,6 +273,7 @@ Returns:
 * Diagnostic information
 
 ---
+<br>
 
 ## Automatic Prediction
 
@@ -263,6 +289,7 @@ Automatically retrieves:
 before generating a risk prediction.
 
 ---
+<br>
 
 ## Snapshot Prediction
 
@@ -273,6 +300,7 @@ POST /api/predict/snapshot
 Performs location-based risk prediction using a single environmental snapshot.
 
 ---
+<br>
 
 # 🧠 Machine Learning Pipeline
 
@@ -296,6 +324,7 @@ artifacts/
 ```
 
 ---
+<br>
 
 # 🌍 Deployment
 
@@ -310,9 +339,8 @@ Live application:
 ```text
 https://accident-predictor-1.onrender.com/
 ```
-
-
 ---
+<br>
 
 # 📊 Future Roadmap
 
@@ -328,6 +356,7 @@ Planned enhancements include:
 * Analytics and reporting modules
 
 ---
+<br>
 
 # 🤝 Contributing
 
@@ -345,6 +374,7 @@ Potential areas for contribution:
 Please fork the repository and submit a pull request.
 
 ---
+<br>
 
 # 👨‍💻 Author
 
@@ -352,6 +382,7 @@ Please fork the repository and submit a pull request.
 Computer Engineering Undergraduate | AI & Software Developer
 
 ---
+<br>
 
 # 📄 License
 
