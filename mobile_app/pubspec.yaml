@@ -1,0 +1,38 @@
+name: roadvisionai_mobile
+description: RoadVisionAI mobile client for accident risk scoring.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.5.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  geolocator: ^14.0.2
+  google_fonts: ^6.2.1
+  http: ^1.2.2
+  intl: ^0.19.0
+  shared_preferences: ^2.1.1
+  flutter_dotenv: ^5.1.0
+
+dev_dependencies:
+  flutter_launcher_icons: ^0.14.4
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter_launcher_icons:
+  android: true
+  ios: false
+  image_path_android: "assets/Logo_square_padded.png"
+
+flutter:
+  uses-material-design: true
+  assets:
+    - .env
+    - assets/Logo.png
+    - assets/roadvisionai_logo.png
+    - assets/roadvisionai_wordmark.png
+
